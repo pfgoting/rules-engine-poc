@@ -1,0 +1,182 @@
+[
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "age",
+                    "operator": "greaterThanInclusive",
+                    "value": 18
+                }
+            ]
+        },
+        "event": {
+            "type": "approved",
+            "params": {
+                "message": "Application approved",
+                "condition": "age >= 18"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "age",
+                    "operator": "lessThan",
+                    "value": 18
+                }
+            ]
+        },
+        "event": {
+            "type": "declined",
+            "params": {
+                "message": "Application declined",
+                "condition": "age < 18"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "age",
+                    "operator": "lessThanInclusive",
+                    "value": 65
+                }
+            ]
+        },
+        "event": {
+            "type": "approved",
+            "params": {
+                "message": "Application approved",
+                "condition": "age <= 65"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "age",
+                    "operator": "greaterThan",
+                    "value": 65
+                }
+            ]
+        },
+        "event": {
+            "type": "declined",
+            "params": {
+                "message": "Application declined",
+                "condition": "age > 65"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "sex",
+                    "operator": "equal",
+                    "value": "male"
+                }
+            ]
+        },
+        "event": {
+            "type": "approved",
+            "params": {
+                "message": "Application approved",
+                "condition": "sex is male"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "sex",
+                    "operator": "notEqual",
+                    "value": "male"
+                }
+            ]
+        },
+        "event": {
+            "type": "declined",
+            "params": {
+                "message": "Application declined",
+                "condition": "sex is not male"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "civilStatus",
+                    "operator": "equal",
+                    "value": "married"
+                }
+            ]
+        },
+        "event": {
+            "type": "approved",
+            "params": {
+                "message": "Application approved",
+                "condition": "civilStatus is married"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "civilStatus",
+                    "operator": "notEqual",
+                    "value": "married"
+                }
+            ]
+        },
+        "event": {
+            "type": "declined",
+            "params": {
+                "message": "Application declined",
+                "condition": "civilStatus is not married"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "medicalHistory",
+                    "operator": "equal",
+                    "value": "none"
+                }
+            ]
+        },
+        "event": {
+            "type": "approved",
+            "params": {
+                "message": "Application approved",
+                "condition": "medicalHistory is none"
+            }
+        }
+    },
+    {
+        "conditions": {
+            "all": [
+                {
+                    "fact": "medicalHistory",
+                    "operator": "notEqual",
+                    "value": "none"
+                }
+            ]
+        },
+        "event": {
+            "type": "declined",
+            "params": {
+                "message": "Application declined",
+                "condition": "medicalHistory is not none"
+            }
+        }
+    }
+]

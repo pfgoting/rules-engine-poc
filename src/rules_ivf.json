@@ -1,0 +1,206 @@
+[
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "isAIAAgent",
+            "operator": "equal",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "approved",
+        "params": {
+          "message": "Proceed to next check"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "isAIAAgent",
+            "operator": "equal",
+            "value": false
+          }
+        ]
+      },
+      "event": {
+        "type": "declined",
+        "params": {
+          "message": "Application declined due to not being an AIA agent"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "productAvailed",
+            "operator": "equal",
+            "value": "IVF"
+          }
+        ]
+      },
+      "event": {
+        "type": "declined",
+        "params": {
+          "message": "Application declined due to IVF product"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "productAvailed",
+            "operator": "notEqual",
+            "value": "IVF"
+          }
+        ]
+      },
+      "event": {
+        "type": "approved",
+        "params": {
+          "message": "Application approved as product is not IVF"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "age",
+            "operator": "greaterThanInclusive",
+            "value": 65
+          }
+        ]
+      },
+      "event": {
+        "type": "declined",
+        "params": {
+          "message": "Application declined due to age greater than 65"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "age",
+            "operator": "lessThan",
+            "value": 65
+          }
+        ]
+      },
+      "event": {
+        "type": "approved",
+        "params": {
+          "message": "Application approved as age is less than 65"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "age",
+            "operator": "lessThan",
+            "value": 18
+          }
+        ]
+      },
+      "event": {
+        "type": "declined",
+        "params": {
+          "message": "Application declined due to age less than 18"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "age",
+            "operator": "greaterThanInclusive",
+            "value": 18
+          }
+        ]
+      },
+      "event": {
+        "type": "approved",
+        "params": {
+          "message": "Application approved as age is greater than or equal to 18"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "hasDependents",
+            "operator": "equal",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "pending",
+        "params": {
+          "message": "Application pending due to dependents"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "hasDependents",
+            "operator": "equal",
+            "value": false
+          }
+        ]
+      },
+      "event": {
+        "type": "approved",
+        "params": {
+          "message": "Application approved as there are no dependents"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "hasMedicalCondition",
+            "operator": "equal",
+            "value": true
+          }
+        ]
+      },
+      "event": {
+        "type": "pending",
+        "params": {
+          "message": "Application pending due to medical condition"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "all": [
+          {
+            "fact": "hasMedicalCondition",
+            "operator": "equal",
+            "value": false
+          }
+        ]
+      },
+      "event": {
+        "type": "approved",
+        "params": {
+          "message": "Application approved as there is no medical condition"
+        }
+      }
+    }
+  ]
